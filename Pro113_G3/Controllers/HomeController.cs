@@ -26,5 +26,22 @@ namespace Pro113_G3.Controllers
 
             return View();
         }
+
+        /*นับคนดูตามวัน*/
+        [HttpPost]
+        public ActionResult Index(string url)
+        {
+            var NameBanner = Request["NameBanner"];
+            if (NameBanner != null)
+            {
+                url = "~/Models/ViewWeb/ViewWeb.aspx?from=" + NameBanner;
+
+                return Redirect(url);
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }
