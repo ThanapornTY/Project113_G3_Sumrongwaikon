@@ -1,0 +1,324 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Mitr');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mitr';
+}
+
+:root {
+    --blue: #1F237C;
+    --white: #ffffff;
+    --grey_box: #F3F6FD;
+    --Col_Bg: #E3EBF9;
+    --black: #000000;
+}
+/*narbar ด้านข้าง*/
+body {
+    background-color: #E3EBF9;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+/*พื้นหลัง narbar*/
+.navigation {
+    position: fixed;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    /*
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+*/
+}
+
+    .navigation .active {
+        width: 80px;
+    }
+
+    .navigation content {
+        font-size: 30px;
+        color: var(--white);
+        text-align: center;
+        line-height: 100px;
+        padding-left: 40px;
+    }
+
+    .navigation ul {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+        .navigation ul li {
+            position: relative;
+            width: 200%;
+            list-style: none;
+            padding-left: 20px;
+            /*แก้ตรงนี้*/
+            transition: 0.5s;
+        }
+
+.UserAcc {
+    padding-left: 20px;
+    Line-height: 70px;
+    user-select: none;
+}
+
+
+/*พื้นหลัง ตอนเอาเมาส์จ่อ*/
+.navigation ul li :hover {
+    background: var(--Col_Bg);
+    color: #1F237C;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+    .navigation ul li a .icon {
+        position: relative;
+        display: block;
+        min-width: 60px;
+        height: 60px;
+        Line-height: 70px;
+        text-align: center;
+    }
+
+.icon {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+.navigation ul li a .icon ion-icon {
+    font-size: 1.75em;
+}
+
+.navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+
+/*nerbar main*/
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 150px;
+    min-height: 100vh;
+    transition: 0.5s;
+}
+/*justify-content: space-between คือการเว้นระยะห่างของ item*/
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background: var(--grey_box);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.topmenu {
+    position: relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+    .search label {
+        position: relative;
+        width: 100%;
+    }
+
+        .search label input {
+            width: 100%;
+            height: 40px;
+            border-radius: 40px;
+            padding: 5px 20px;
+            padding-left: 35px;
+            font-size: 18px;
+            outline: none;
+            border: 1px solid var(--blue);
+        }
+
+        .search label ion-icon {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            font-size: 1.2em;
+        }
+
+.accountPic {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+    .accountPic image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+/*กรอบข้อมูล 3 อันด้านบน*/
+.carbBox {
+    position: relative;
+    width: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,2fr);
+    grid-gap: 30px;
+}
+
+    .carbBox .card {
+        position: relative;
+        background: var(--grey_box);
+        padding: 30px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    }
+
+        .carbBox .card .numbers {
+            position: relative;
+            font-weight: 500;
+            font-size: 2em;
+            color: var(--blue);
+        }
+
+        .carbBox .card .cardName {
+            margin-top: 5px;
+            font-size: 1em;
+            color: var(--black);
+        }
+
+        .carbBox .card .iconBox {
+            font-size: 3.5em;
+            color: var(--black);
+        }
+
+        .carbBox .card:hover {
+            background: var(--blue);
+        }
+
+            .carbBox .card:hover .numbers,
+            .carbBox .card:hover .cardName,
+            .carbBox .card:hover .iconBox {
+                color: var(--white);
+            }
+
+/*กรอบใหญ่ ที่ใส่กราฟ*/
+.details {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(1,2fr);
+    grid-gap: 30px;
+    margin-top: 10px;
+}
+
+    .details .graph {
+        position: relative;
+        display: grid;
+        border-radius: 20px;
+        min-height: 450px;
+        background: var(--grey_box);
+        padding: 20px;
+        box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    }
+
+#check {
+    display: none;
+}
+
+label #okbuttom,
+label #cancelbuttom {
+    position: absolute;
+    cursor: pointer;
+    border-radius: 20px;
+    background: var(--grey_box);
+}
+
+label #okbuttom {
+    left: 42px;
+    top: 27px;
+    font-size: 35px;
+    color: var(--blue);
+    padding: 6px 12px;
+    transition: all .5s;
+}
+
+label #cancelbuttom {
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: var(--blue);
+    padding: 5px 10px;
+    transition: all .5s ease;
+}
+
+#check:checked ~ .navigation {
+    left: 0;
+}
+
+#check:checked ~ .main {
+    left: 300px;
+}
+
+#check:checked ~ label #okbuttom {
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#check:checked ~ label #cancelbuttom {
+    position: fixed;
+    left: 215px;
+}
