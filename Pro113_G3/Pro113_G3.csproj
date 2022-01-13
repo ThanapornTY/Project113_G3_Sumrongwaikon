@@ -73,6 +73,7 @@
     <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -208,6 +209,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\HitCountersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UserDatasController.cs" />
@@ -250,13 +252,6 @@
     <Compile Include="Models\ViewWeb\UCHitCounter.ascx.designer.cs">
       <DependentUpon>UCHitCounter.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewWeb\ViewWeb.aspx.cs">
-      <DependentUpon>ViewWeb.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Models\ViewWeb\ViewWeb.aspx.designer.cs">
-      <DependentUpon>ViewWeb.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Models\ViewWeb\ViewWebModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -282,6 +277,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Dashboard\Dashboard_css.css" />
     <Content Include="Content\images\SH1.jpg" />
+    <Content Include="Content\images\SH2.jpg" />
+    <Content Include="Content\images\Th1.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -297,7 +294,6 @@
       <LastGenOutput>UserAccModel.cs</LastGenOutput>
     </Content>
     <Content Include="Models\ViewWeb\UCHitCounter.ascx" />
-    <Content Include="Models\ViewWeb\ViewWeb.aspx" />
     <Content Include="Models\ViewWeb\ViewWebModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ViewWebModel.edmx</DependentUpon>
@@ -378,6 +374,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ReportSources\" />
+    <Folder Include="Reports\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
